@@ -1,0 +1,23 @@
+{
+  "name": "yoga-scraper",
+  "version": "1.0.0",
+  "description": "Scrapes poor tired yogis off the floor.",
+  "main": "manager.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heatherbooker/yoga-scraper.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/heatherbooker/yoga-scraper/issues"
+  },
+  "homepage": "https://github.com/heatherbooker/yoga-scraper#readme",
+  "dependencies": {
+    "twilio": "2.11.1"
+  }
+}
