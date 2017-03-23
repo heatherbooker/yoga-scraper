@@ -1,20 +1,27 @@
+'use strict';
 const twilio = require('twilio');
-const config = require('config');
-const yoga_manager = require('manager.js');
+const yogaManager = require('./manager.js');
 
+// Make Twilio creds avail on process.env.
+require('dotenv').config();
+const accountSid = process.env.TWILIO_ID;
+const authToken = process.env.TWILIO_TOKEN;
 
-// Twilio Credentials
-var accountSid = config.twilio_accountSid;
-var authToken = config.twilio_authToken;
-
-//require the Twilio module and create a REST client
-var client = twilio(accountSid, authToken);
-
-client.messages.create({
-    to: '+15197025387',
-    from: '+12262714596',
-    body: 'Morn: hot, cold, potato, so many yogas.',
-}, function (err, message) {
-    console.log(message.sid);
+const classes = yogaManager.getClassesByTime();
+Object.keys(classes).forEach(time => {
+    if (classes.hasOwnProperty(time)) {
+        sendMsg(`${time}: ${classes[time]}`);
+    }
 });
+
+function sendMsg(msg) {
+    const client = twilio(accountSid, authToken);
+    client.messages.create({
+        to: '+15197025387',
+        from: '+12262714596',
+        body: msg,
+    }, function (err, message) {
+        console.log(message.sid);
+    });
+}
 

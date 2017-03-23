@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/heatherbooker/yoga-scraper#readme",
   "dependencies": {
-    "twilio": "2.11.1"
+    "twilio": "2.11.1",
+    "dotenv": "4.0.0"
   }
 }

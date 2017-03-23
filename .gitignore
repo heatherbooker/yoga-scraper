@@ -1,3 +1,4 @@
 geckodriver.log
-config
+.env
 node_modules
+yoga_classes.txt
