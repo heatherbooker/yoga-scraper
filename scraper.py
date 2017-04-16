@@ -1,4 +1,5 @@
 import time
+import subprocess
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait, Select
@@ -41,3 +42,4 @@ if __name__ == "__main__":
     time.sleep(45)
     driver.quit()
     write_file(class_data)
+    subprocess.call(['node', 'twilio-client.js'])
